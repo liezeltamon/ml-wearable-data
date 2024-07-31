@@ -99,6 +99,9 @@ for idx in ukbb_acc_qc_passed_sick_df.index.to_list():
         break
 
 print(disease_arr.shape)
+# %%
+healthy = np.sum(disease_arr, axis = 1) == 0 # No ICD-10 code for individual
+np.unique(healthy, return_counts=True)
 
 # %%
 disease_mapping_df = pd.read_csv(natmed_disese_mapping_path)
@@ -108,18 +111,18 @@ disease_categories = np.unique(disease_mapping_df["disease"].to_numpy())
 disease_categories
 
 # %%
-disease_categories_arr = np.empty((num_rows, len(disease_categories)))
+disease_categories_arr = np.full((num_rows, len(disease_categories)), np.nan)
 disease_categories_arr.shape
+np.unique(disease_categories_arr, return_counts=True)
 
 # %%
 index_array = np.array(icd10_lvls)
 for idx in disease_mapping_df.index.to_list():
     print(idx)
-    #idx = 2
     elements = np.array(disease_mapping_df["disease_codes"].iloc[idx])
     elements = [remove_non_alphanumeric(text) for text in elements]
     elements = np.intersect1d(elements, index_array)
-    elements
+    print(elements)
     if len(elements) == 0:
         continue
     else:
