@@ -19,15 +19,6 @@ import re
 import re
 # Function to remove non-alphanumeric characters
 def remove_non_alphanumeric(text):
-    """
-    Remove non-alphanumeric characters from the given text.
-
-    Parameters:
-    text (str): The input string from which non-alphanumeric characters will be removed.
-
-    Returns:
-    str: The cleaned string with only alphanumeric characters.
-    """
     return re.sub(r'[^a-zA-Z0-9]', '', text)
 
 # %% Parameters
