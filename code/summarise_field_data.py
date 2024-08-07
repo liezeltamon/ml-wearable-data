@@ -1,4 +1,4 @@
-# Explore download field data from UKBB
+# Categorise individuals with wearable data based on disease phenotypes
 
 # %% Setup
 import sys
