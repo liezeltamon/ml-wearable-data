@@ -143,6 +143,3 @@ print(disease_categories_arr.shape)
 df = pd.DataFrame(disease_categories_arr, columns=disease_categories)
 #df = df.astype("int64")
 df.apply(pd.Series.value_counts)
-
-# %%
-#
