@@ -1,1 +1,3 @@
-#### Learning ml/dl methods in Python with wearable device data
+#### ML/DL on wearable device and other types of data for addressing 
+diseases
+
